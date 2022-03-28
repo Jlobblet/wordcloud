@@ -3,6 +3,8 @@
 module Lib
   ( makeWordMapFromStdin,
     makeWordMap,
+    trimNonAlphaNum,
+    countWords,
   )
 where
 
