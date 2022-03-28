@@ -16,10 +16,10 @@ makeWordMapFromStdin :: IO (Map.Map T.Text Integer)
 makeWordMapFromStdin = makeWordMap <$> T.IO.getContents
 
 makeWordMap :: T.Text -> Map.Map T.Text Integer
-makeWordMap = countWords . filter (not . T.null) . fmap filterNonAlphaNum . T.words
+makeWordMap = countWords . filter (not . T.null) . fmap trimNonAlphaNum . T.words
 
-filterNonAlphaNum :: T.Text -> T.Text
-filterNonAlphaNum = liftA2 (.) T.dropWhileEnd T.dropWhile (not . isAlphaNum)
+trimNonAlphaNum :: T.Text -> T.Text
+trimNonAlphaNum = liftA2 (.) T.dropWhileEnd T.dropWhile (not . isAlphaNum)
 
 countWords :: [T.Text] -> Map.Map T.Text Integer
 countWords = Map.fromListWith (+) . fmap (,1)
