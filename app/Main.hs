@@ -1,6 +1,6 @@
 module Main where
 
-import Lib
+import Lib (makeWordMapFromStdin)
 
 main :: IO ()
 main = makeWordMapFromStdin >>= print
