@@ -8,7 +8,6 @@ module Lib
   )
 where
 
-import Control.Applicative (liftA2)
 import Data.Char (isAlphaNum, isSpace)
 import qualified Data.Map as Map
 import qualified Data.Text as T
