@@ -21,7 +21,7 @@ makeWordMap :: T.Text -> Map.Map T.Text Integer
 makeWordMap = countWords . filter (not . T.null) . fmap trimNonAlphaNum . T.words
 
 trimNonAlphaNum :: T.Text -> T.Text
-trimNonAlphaNum = liftA2 (.) T.dropWhileEnd T.dropWhile (not . isAlphaNum)
+trimNonAlphaNum = T.dropAround (not . isAlphaNum)
 
 countWords :: [T.Text] -> Map.Map T.Text Integer
 countWords = Map.fromListWith (+) . fmap (,1)
