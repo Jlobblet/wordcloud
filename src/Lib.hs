@@ -1,7 +1,8 @@
 {-# LANGUAGE TupleSections #-}
 
 module Lib
-  ( makeWordMap,
+  ( makeWordMapFromStdin,
+    makeWordMap,
   )
 where
 
