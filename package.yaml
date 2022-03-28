@@ -1,10 +1,10 @@
 name:                wordcloud
 version:             0.1.0.0
-github:              "githubuser/wordcloud"
+github:              "Jlobblet/wordcloud"
 license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2022 Author name here"
+author:              "John Blundell (Jlobblet)"
+maintainer:          "john@jlobblet.co.uk"
+copyright:           "2022 John Blundell"
 
 extra-source-files:
 - README.md
@@ -17,11 +17,13 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/wordcloud#readme>
+description:         Please see the README on GitHub at <https://github.com/jlobblet/wordcloud#readme>
 
 dependencies:
 - base >= 4.7 && < 5
 - text
+- containers
+- hedgehog
 
 library:
   source-dirs: src
@@ -47,3 +49,4 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - wordcloud
+    - hedgehog
